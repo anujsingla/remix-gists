@@ -61,6 +61,17 @@ function Document({
   );
 }
 
+export function ErrorBoundary({ error }: { error: Error }) {
+  return (
+    <Document>
+      <div className="error-container">
+        <h1>Root level error boundary</h1>
+        <pre>{error?.message}</pre>
+      </div>
+    </Document>
+  );
+}
+
 export function CatchBoundary() {
   const caught = useCatch();
 
